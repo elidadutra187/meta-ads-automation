@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/mcp-config-schema.json",
+  "mcpServers": {
+
+    "meta-ads-oficial": {
+      "type": "remote",
+      "url": "https://mcp.facebook.com/ads",
+      "description": "Meta Ads MCP Oficial - Campanhas Facebook/Instagram",
+      "note": "Requer autenticação OAuth no primeiro uso"
+    },
+
+    "meta-ads-pipeboard": {
+      "command": "npx",
+      "args": ["-y", "@pipeboard/meta-ads-mcp"],
+      "env": {
+        "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN}",
+        "META_AD_ACCOUNT_ID": "${META_AD_ACCOUNT_ID}",
+        "META_PAGE_ID": "${FACEBOOK_PAGE_ID}"
+      },
+      "description": "Pipeboard Meta Ads - 42 ferramentas completas"
+    },
+
+    "whatsapp-wassenger": {
+      "command": "npx",
+      "args": ["-y", "@wassenger/mcp-server"],
+      "env": {
+        "WASSENGER_API_KEY": "${WASSENGER_API_KEY}",
+        "WASSENGER_DEVICE_ID": "${WASSENGER_DEVICE_ID}"
+      },
+      "description": "WhatsApp via Wassenger - Inbox e automações"
+    },
+
+    "whatsapp-composio": {
+      "type": "http",
+      "url": "https://mcp.composio.dev/whatsapp",
+      "headers": {
+        "X-API-Key": "${COMPOSIO_API_KEY}"
+      },
+      "description": "WhatsApp via Composio - Multi-plataforma"
+    },
+
+    "saldao-local": {
+      "command": "python",
+      "args": ["-m", "src.mcp_server"],
+      "cwd": "D:\\Users\\elida\\Desktop\\GitHub-Prep\\meta-ads-automation",
+      "env": {
+        "OLLAMA_MODEL": "llama3.2"
+      },
+      "description": "Servidor local Saldão - Copy com Ollama + automações"
+    }
+  }
+}

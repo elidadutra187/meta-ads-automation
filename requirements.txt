@@ -23,3 +23,6 @@ pandas>=2.0.0
 
 # Logs
 loguru>=0.7.0
+
+# MCP Server
+mcp>=1.0.0
