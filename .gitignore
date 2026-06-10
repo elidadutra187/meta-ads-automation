@@ -1,0 +1,37 @@
+# Ambiente
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/*.log
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Criativos (não versionar imagens pesadas)
+criativos/*.jpg
+criativos/*.jpeg
+criativos/*.png
+criativos/*.mp4
+criativos/*.mov
+!criativos/.gitkeep
+
+# Dados sensíveis
+*.csv
+*.xlsx
+credentials/
+secrets/
