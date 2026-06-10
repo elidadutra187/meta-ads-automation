@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "composio-saldao": {
+      "type": "url",
+      "url": "https://mcp.composio.dev/saldao-center/ak_F86dMTnyUmU68-zYFM5i",
+      "description": "Composio - Facebook + Google Ads"
+    },
+    "meta-ads": {
+      "type": "url",
+      "url": "https://mcp.facebook.com/ads",
+      "description": "Meta Ads Oficial (Facebook/Instagram Ads)"
+    },
+    "google-analytics": {
+      "type": "url",
+      "url": "https://mcp-ga.stape.ai/mcp",
+      "description": "Google Analytics 4"
+    },
+    "google-tag-manager": {
+      "type": "url",
+      "url": "https://mcp-gtm.stape.ai/mcp",
+      "description": "Google Tag Manager"
+    }
+  }
+}
