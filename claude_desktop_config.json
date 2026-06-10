@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/mcp-config-schema.json",
+  "mcpServers": {
+
+    "saldao-hub": {
+      "command": "D:\\Users\\elida\\Desktop\\GitHub-Prep\\meta-ads-automation\\venv\\Scripts\\python.exe",
+      "args": ["-m", "src.mcp_hub"],
+      "cwd": "D:\\Users\\elida\\Desktop\\GitHub-Prep\\meta-ads-automation",
+      "description": "Hub Saldao Center - Tiny ERP, Multigrow, GTM, GA4, Meta Ads, Copy IA"
+    },
+
+    "meta-ads-oficial": {
+      "type": "url",
+      "url": "https://mcp.facebook.com/ads",
+      "description": "Meta Ads MCP Oficial (29 ferramentas)"
+    },
+
+    "gtm-stape": {
+      "type": "url",
+      "url": "https://mcp-gtm.stape.ai/mcp",
+      "description": "Google Tag Manager via Stape"
+    },
+
+    "ga4-stape": {
+      "type": "url",
+      "url": "https://mcp-ga.stape.ai/mcp",
+      "description": "Google Analytics 4 via Stape"
+    },
+
+    "tiny-erp": {
+      "command": "npx",
+      "args": ["-y", "@mcpmarket/olist-erp"],
+      "env": {
+        "TINY_TOKEN": "${TINY_TOKEN}"
+      },
+      "description": "Tiny ERP (Olist) - 168 ferramentas"
+    }
+  }
+}
