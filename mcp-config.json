@@ -3,12 +3,9 @@
   "mcpServers": {
 
     "composio": {
-      "command": "npx",
-      "args": ["-y", "composio-mcp-server"],
-      "env": {
-        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i"
-      },
-      "description": "Composio - Google Analytics, Google Ads, Facebook (ATIVO)"
+      "type": "url",
+      "url": "https://connect.composio.dev/mcp",
+      "description": "Composio - Google Analytics, Google Ads, Facebook (OAuth automatico)"
     },
 
     "meta-ads-oficial": {
