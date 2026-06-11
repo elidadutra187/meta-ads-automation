@@ -2,6 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/mcp-config-schema.json",
   "mcpServers": {
 
+    "composio": {
+      "type": "url",
+      "url": "https://mcp.composio.dev/saldao-center/ak_F86dMTnyUmU68-zYFM5i",
+      "description": "Composio - Google Analytics, Google Ads, Facebook"
+    },
+
     "meta-ads-oficial": {
       "type": "url",
       "url": "https://mcp.facebook.com/ads",
