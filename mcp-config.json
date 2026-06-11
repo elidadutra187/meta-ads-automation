@@ -3,50 +3,48 @@
   "mcpServers": {
 
     "meta-ads-oficial": {
-      "type": "remote",
+      "type": "url",
       "url": "https://mcp.facebook.com/ads",
-      "description": "Meta Ads MCP Oficial - Campanhas Facebook/Instagram",
-      "note": "Requer autenticação OAuth no primeiro uso"
+      "description": "Meta Ads MCP Oficial - Campanhas Facebook/Instagram"
+    },
+
+    "google-analytics-4": {
+      "type": "url",
+      "url": "https://mcp-ga.stape.ai/mcp",
+      "description": "Google Analytics 4 - Metricas, sessoes, conversoes, relatorios"
+    },
+
+    "google-tag-manager": {
+      "type": "url",
+      "url": "https://gtm-mcp.stape.ai/mcp",
+      "description": "Google Tag Manager - Tags, triggers, variaveis, containers"
+    },
+
+    "stape-server": {
+      "type": "url",
+      "url": "https://mcp.stape.ai/mcp",
+      "description": "Stape Server - Containers e zones"
     },
 
     "meta-ads-pipeboard": {
       "command": "npx",
-      "args": ["-y", "@pipeboard/meta-ads-mcp"],
+      "args": ["-y", "@anthropic-community/meta-ads-mcp"],
       "env": {
         "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN}",
         "META_AD_ACCOUNT_ID": "${META_AD_ACCOUNT_ID}",
         "META_PAGE_ID": "${FACEBOOK_PAGE_ID}"
       },
-      "description": "Pipeboard Meta Ads - 42 ferramentas completas"
-    },
-
-    "whatsapp-wassenger": {
-      "command": "npx",
-      "args": ["-y", "@wassenger/mcp-server"],
-      "env": {
-        "WASSENGER_API_KEY": "${WASSENGER_API_KEY}",
-        "WASSENGER_DEVICE_ID": "${WASSENGER_DEVICE_ID}"
-      },
-      "description": "WhatsApp via Wassenger - Inbox e automações"
-    },
-
-    "whatsapp-composio": {
-      "type": "http",
-      "url": "https://mcp.composio.dev/whatsapp",
-      "headers": {
-        "X-API-Key": "${COMPOSIO_API_KEY}"
-      },
-      "description": "WhatsApp via Composio - Multi-plataforma"
+      "description": "Meta Ads Community - Ferramentas completas"
     },
 
     "saldao-local": {
       "command": "python",
       "args": ["-m", "src.mcp_server"],
-      "cwd": "D:\\Users\\elida\\Desktop\\GitHub-Prep\\meta-ads-automation",
+      "cwd": "C:\\Users\\elida\\Desktop\\GitHub-Prep\\meta-ads-automation",
       "env": {
         "OLLAMA_MODEL": "llama3.2"
       },
-      "description": "Servidor local Saldão - Copy com Ollama + automações"
+      "description": "Servidor local Saldao - Copy com Ollama + automacoes"
     }
   }
 }

@@ -13,19 +13,19 @@ MCP (Model Context Protocol) é um protocolo que permite conectar IA (Claude) di
 │                    CLAUDE DESKTOP/CODE                       │
 └─────────────────────────┬───────────────────────────────────┘
                           │ MCP Protocol
-          ┌───────────────┼───────────────┐
-          ▼               ▼               ▼
-   ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
-   │  Meta Ads   │ │  WhatsApp   │ │   Local     │
-   │    MCP      │ │    MCP      │ │    MCP      │
-   │  (Oficial)  │ │ (Wassenger) │ │  (Ollama)   │
-   └──────┬──────┘ └──────┬──────┘ └──────┬──────┘
-          ▼               ▼               ▼
-    - Campanhas     - Inbox          - Gerar copy
-    - Métricas      - Mensagens      - Targeting
-    - Criativos     - Automações     - Calcular m²
-    - Diagnóstico   - Leads          - Headlines
+    ┌─────────┬───────────┼───────────┬─────────┬─────────┐
+    ▼         ▼           ▼           ▼         ▼         ▼
+┌───────┐ ┌───────┐ ┌─────────┐ ┌─────────┐ ┌───────┐ ┌───────┐
+│ Meta  │ │  GA4  │ │   GTM   │ │  Local  │ │Google │ │ Stape │
+│  Ads  │ │       │ │         │ │ Ollama  │ │  Ads* │ │Server │
+└───┬───┘ └───┬───┘ └────┬────┘ └────┬────┘ └───┬───┘ └───┬───┘
+    ▼         ▼          ▼           ▼         ▼         ▼
+Campanhas  Métricas    Tags      Gerar    Campanhas  Containers
+Anúncios   Sessões   Triggers    Copy     Conversões   Zones
+Insights   Eventos   Variáveis Targeting    Ads      Hosting
 ```
+
+**Atualizado em Junho 2026** - Inclui Google Analytics 4, GTM e Google Ads via Stape.ai
 
 ---
 
@@ -51,7 +51,70 @@ A Meta lançou um MCP oficial em abril de 2026.
 
 ---
 
-## Opção 2: Pipeboard (42 ferramentas)
+## Opção 2: Google Analytics 4 MCP (Stape.ai)
+
+Integração completa com GA4 para métricas e relatórios.
+
+### Configuração
+
+1. Acesse: `https://mcp-ga.stape.ai/mcp`
+2. Faça login com sua conta Google
+3. Autorize o acesso às propriedades GA4
+4. A URL já está no `mcp-config.json`
+
+### Ferramentas Disponíveis
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `run_report` | Executa relatórios personalizados |
+| `get_realtime` | Dados em tempo real |
+| `list_properties` | Lista propriedades GA4 |
+| `get_metrics` | Métricas (sessões, conversões, etc) |
+| `list_google_ads` | Contas Google Ads vinculadas |
+
+### Exemplos de Uso
+
+```
+Você: "Qual o tráfego do site essa semana?"
+Você: "Quantas conversões tivemos ontem?"
+Você: "De onde vem o tráfego? Orgânico ou pago?"
+```
+
+---
+
+## Opção 3: Google Tag Manager MCP (Stape.ai)
+
+Gerencie tags, triggers e variáveis pelo Claude.
+
+### Configuração
+
+1. Acesse: `https://gtm-mcp.stape.ai/mcp`
+2. Faça login com sua conta Google
+3. Autorize o acesso aos containers GTM
+
+### Ferramentas Disponíveis
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `list_containers` | Lista containers GTM |
+| `list_tags` | Lista todas as tags |
+| `create_tag` | Cria nova tag |
+| `list_triggers` | Lista triggers |
+| `create_trigger` | Cria novo trigger |
+| `list_variables` | Lista variáveis |
+| `publish_version` | Publica versão do container |
+
+### Exemplos de Uso
+
+```
+Você: "Quais tags de conversão tenho no GTM?"
+Você: "Crie uma tag de remarketing do Google Ads"
+Você: "Liste os triggers de clique em botão"
+```
+
+---
+
+## Opção 4: Pipeboard (42 ferramentas)
 
 Mais completo que o oficial, inclui targeting detalhado.
 
