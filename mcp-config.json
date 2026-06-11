@@ -2,31 +2,31 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/mcp-config-schema.json",
   "mcpServers": {
 
-    "meta-ads-oficial": {
-      "type": "url",
-      "url": "https://mcp.facebook.com/ads",
-      "description": "Meta Ads MCP Oficial - Campanhas Facebook/Instagram"
-    },
-
-    "google-analytics-4": {
-      "type": "url",
-      "url": "https://mcp-ga.stape.ai/mcp",
-      "description": "Google Analytics 4 - Metricas, sessoes, conversoes, relatorios"
-    },
-
-    "google-tag-manager": {
-      "type": "url",
-      "url": "https://gtm-mcp.stape.ai/mcp",
-      "description": "Google Tag Manager - Tags, triggers, variaveis, containers"
-    },
-
     "composio": {
       "command": "npx",
       "args": ["-y", "composio-mcp-server"],
       "env": {
         "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i"
       },
-      "description": "Composio - Google Analytics, Google Ads, Facebook"
+      "description": "Composio - Google Analytics, Google Ads, Facebook (ATIVO)"
+    },
+
+    "meta-ads-oficial": {
+      "type": "url",
+      "url": "https://mcp.facebook.com/ads",
+      "description": "Meta Ads MCP Oficial - Campanhas Facebook/Instagram"
+    },
+
+    "google-analytics-stape": {
+      "type": "url",
+      "url": "https://mcp-ga.stape.ai/mcp",
+      "description": "Google Analytics 4 via Stape (backup)"
+    },
+
+    "google-tag-manager": {
+      "type": "url",
+      "url": "https://gtm-mcp.stape.ai/mcp",
+      "description": "Google Tag Manager - Tags, triggers, variaveis"
     },
 
     "saldao-local": {
@@ -36,7 +36,7 @@
       "env": {
         "OLLAMA_MODEL": "llama3.2"
       },
-      "description": "Servidor local Saldao - Copy com Ollama + automacoes"
+      "description": "Servidor local Saldao - Copy com Ollama"
     }
   }
 }
