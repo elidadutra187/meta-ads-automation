@@ -2,12 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/mcp-config-schema.json",
   "mcpServers": {
 
-    "composio": {
-      "type": "url",
-      "url": "https://mcp.composio.dev/saldao-center/ak_F86dMTnyUmU68-zYFM5i",
-      "description": "Composio - Google Analytics, Google Ads, Facebook"
-    },
-
     "meta-ads-oficial": {
       "type": "url",
       "url": "https://mcp.facebook.com/ads",
@@ -26,21 +20,34 @@
       "description": "Google Tag Manager - Tags, triggers, variaveis, containers"
     },
 
-    "stape-server": {
-      "type": "url",
-      "url": "https://mcp.stape.ai/mcp",
-      "description": "Stape Server - Containers e zones"
+    "composio-ga": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-community/composio-mcp@latest"],
+      "env": {
+        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i",
+        "COMPOSIO_TOOLKITS": "google_analytics"
+      },
+      "description": "Composio - Google Analytics"
     },
 
-    "meta-ads-pipeboard": {
+    "composio-gads": {
       "command": "npx",
-      "args": ["-y", "@anthropic-community/meta-ads-mcp"],
+      "args": ["-y", "@anthropic-community/composio-mcp@latest"],
       "env": {
-        "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN}",
-        "META_AD_ACCOUNT_ID": "${META_AD_ACCOUNT_ID}",
-        "META_PAGE_ID": "${FACEBOOK_PAGE_ID}"
+        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i",
+        "COMPOSIO_TOOLKITS": "googleads"
       },
-      "description": "Meta Ads Community - Ferramentas completas"
+      "description": "Composio - Google Ads"
+    },
+
+    "composio-fb": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-community/composio-mcp@latest"],
+      "env": {
+        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i",
+        "COMPOSIO_TOOLKITS": "facebook"
+      },
+      "description": "Composio - Facebook Pages"
     },
 
     "saldao-local": {
