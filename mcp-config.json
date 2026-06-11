@@ -20,34 +20,13 @@
       "description": "Google Tag Manager - Tags, triggers, variaveis, containers"
     },
 
-    "composio-ga": {
+    "composio": {
       "command": "npx",
-      "args": ["-y", "@anthropic-community/composio-mcp@latest"],
+      "args": ["-y", "composio-mcp-server"],
       "env": {
-        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i",
-        "COMPOSIO_TOOLKITS": "google_analytics"
+        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i"
       },
-      "description": "Composio - Google Analytics"
-    },
-
-    "composio-gads": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-community/composio-mcp@latest"],
-      "env": {
-        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i",
-        "COMPOSIO_TOOLKITS": "googleads"
-      },
-      "description": "Composio - Google Ads"
-    },
-
-    "composio-fb": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-community/composio-mcp@latest"],
-      "env": {
-        "COMPOSIO_API_KEY": "ak_F86dMTnyUmU68-zYFM5i",
-        "COMPOSIO_TOOLKITS": "facebook"
-      },
-      "description": "Composio - Facebook Pages"
+      "description": "Composio - Google Analytics, Google Ads, Facebook"
     },
 
     "saldao-local": {
