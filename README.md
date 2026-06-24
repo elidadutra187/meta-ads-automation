@@ -1,272 +1,117 @@
 # Meta Ads Automation
 
-Sistema **100% gratuito** de automação de anúncios para Facebook e Instagram usando IA local (Ollama).
+**AI-assisted Meta Ads operations system for copy generation, creative organization, campaign support and performance monitoring.**
 
-## Funcionalidades
+This project explores how local AI, Python and the Meta Marketing API can support paid media routines without removing human validation from sensitive decisions.
 
-- **Upload automático** de criativos (imagens/vídeos)
-- **Geração de copy** com IA local (Ollama - gratuito)
-- **Criação de campanhas** completas via CLI
-- **Otimização automática** baseada em CPA/ROAS
-- **Monitoramento contínuo** com alertas
-- **Teste A/B** de copies gerados por IA
-- **Relatórios** de performance
+Repository: [elidadutra187/meta-ads-automation](https://github.com/elidadutra187/meta-ads-automation)
 
-## Custos
+---
 
-| Componente | Custo |
-|------------|-------|
-| Ollama (IA local) | Gratuito |
-| Meta Marketing API | Gratuito |
-| Python + Bibliotecas | Gratuito |
-| **Total** | **R$ 0** |
+## Business problem
 
-> Você só paga pelos anúncios no Meta Ads.
+Paid media operations involve many repetitive tasks: organizing creatives, generating copy variations, checking campaign status, reading performance metrics, identifying weak ads and preparing optimization notes.
 
-## Requisitos
+The goal of this project is not to blindly automate advertising decisions, but to create a safer workflow where AI helps with analysis and operational speed while the human still validates campaign changes.
 
-- Python 3.9+
-- [Ollama](https://ollama.com) instalado
-- Conta Meta Business
-- App no [Meta for Developers](https://developers.facebook.com)
+---
 
-## Instalação
+## What it does
 
-### 1. Clone o repositório
+The system supports:
 
-```bash
-git clone https://github.com/seu-usuario/meta-ads-automation.git
-cd meta-ads-automation
+- local AI copy generation with Ollama;
+- creative organization for Meta campaigns;
+- campaign creation support through CLI;
+- campaign listing and status checks;
+- insights monitoring;
+- reports for CTR, CPC, CPA, ROAS and performance;
+- optimization suggestions based on rules;
+- Windows setup scripts;
+- structure prepared for MCP / Claude workflows.
+
+---
+
+## Stack
+
+- **Python** for CLI and automation logic
+- **Meta Marketing API** for campaign and insights access
+- **Ollama** for local AI copy generation
+- **MCP / Claude-ready architecture** for AI-assisted operations
+- **Batch scripts** for Windows setup and execution
+- **dotenv** for environment configuration
+
+---
+
+## Safety principle
+
+This project is designed around a human-in-the-loop approach.
+
+AI can generate copy, organize hypotheses, suggest adjustments and accelerate analysis. However, sensitive actions such as activating, pausing or changing real-budget campaigns should remain under explicit human validation.
+
+---
+
+## Example workflow
+
+```text
+Creative folder
+→ AI copy generation
+→ Campaign structure support
+→ Meta Ads upload / campaign operations
+→ Insights monitoring
+→ Optimization report
+→ Human review
+→ Approved changes
 ```
 
-### 2. Execute o setup
+---
 
-**Windows:**
-```batch
-scripts\setup.bat
-```
+## Main features
 
-**Linux/Mac:**
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-```
+- Generate ad copy variations with local AI
+- Upload and organize creatives
+- Create structured campaign drafts
+- Read campaign metrics
+- Monitor performance indicators
+- Generate reports and optimization notes
+- Support repeatable campaign operations
 
-### 3. Configure as credenciais
+---
 
-Edite o arquivo `.env` com suas credenciais:
+## Metrics monitored
 
-```env
-META_APP_ID=seu_app_id
-META_APP_SECRET=seu_app_secret
-META_ACCESS_TOKEN=seu_token
-META_AD_ACCOUNT_ID=123456789
-FACEBOOK_PAGE_ID=sua_pagina
-```
+- CTR
+- CPC
+- CPM
+- CPA
+- ROAS
+- spend
+- impressions
+- clicks
+- conversions
+- creative performance
 
-### 4. Instale o modelo Ollama
+---
 
-```bash
-ollama pull llama3.2
-```
+## Why it matters
 
-### 5. Inicie o Ollama
+For small marketing teams, campaign management can become fragmented across spreadsheets, ad platforms, creative folders and manual notes.
 
-```bash
-ollama serve
-```
+This project creates a more structured operating layer between paid media execution, AI assistance and performance analysis.
 
-Ou no Windows:
-```batch
-scripts\start_ollama.bat
-```
+---
 
-## Como Obter Credenciais Meta
+## Status
 
-1. Acesse [developers.facebook.com](https://developers.facebook.com)
-2. Crie um novo App (tipo: Business)
-3. Adicione o produto "Marketing API"
-4. Gere um Access Token com permissões:
-   - `ads_management`
-   - `ads_read`
-   - `business_management`
-   - `pages_read_engagement`
+Portfolio case / evolving project.
 
-## Uso
+This project represents practical work in **Marketing Automation, Paid Media Operations and AI-assisted campaign workflows**.
 
-### Verificar conexões
+---
 
-```bash
-python -m src.main status
-```
+## Author
 
-### Upload de criativos
+**Élida Dutra**  
+Growth · Paid Media · Marketing Automation · AI Workflows · E-commerce Ops
 
-Coloque suas imagens na pasta `criativos/` e execute:
-
-```bash
-python -m src.main upload
-```
-
-Ou especifique uma pasta:
-
-```bash
-python -m src.main upload "C:\meus\criativos"
-```
-
-### Gerar copy com IA
-
-```bash
-python -m src.main gerar-copy "Curso de Marketing Digital" \
-  --publico "Empreendedores 25-45 anos" \
-  --objetivo "Vendas" \
-  --tom "Urgente"
-```
-
-### Criar campanha completa
-
-```bash
-python -m src.main criar-campanha "Meu Produto" "https://meusite.com/produto" \
-  --budget 5000 \
-  --ativar
-```
-
-Isso vai:
-1. Fazer upload de todos os criativos
-2. Gerar copy com IA
-3. Criar campanha, ad set e ads
-4. Ativar (se usar `--ativar`)
-
-### Listar campanhas
-
-```bash
-python -m src.main listar
-```
-
-### Ver métricas
-
-```bash
-python -m src.main insights CAMPAIGN_ID
-```
-
-### Otimizar campanhas
-
-```bash
-python -m src.main otimizar
-```
-
-### Monitoramento contínuo
-
-```bash
-python -m src.main monitorar --intervalo 30
-```
-
-### Gerar relatório
-
-```bash
-python -m src.main relatorio
-```
-
-## Estrutura do Projeto
-
-```
-meta-ads-automation/
-├── config/
-│   └── settings.py      # Configurações
-├── criativos/           # Suas imagens/vídeos
-├── logs/                # Logs do sistema
-├── scripts/
-│   ├── setup.bat        # Setup Windows
-│   ├── run.bat          # Atalho para comandos
-│   └── start_ollama.bat # Iniciar Ollama
-├── src/
-│   ├── main.py          # CLI principal
-│   ├── meta_api.py      # Integração Meta
-│   ├── ollama_copy.py   # Geração de copy
-│   ├── campaign_manager.py # Gerenciador
-│   ├── optimizer.py     # Otimização
-│   └── monitor.py       # Monitoramento
-├── templates/
-│   └── prompts.py       # Prompts para IA
-├── .env.example         # Exemplo de config
-├── requirements.txt     # Dependências
-└── README.md
-```
-
-## Regras de Otimização
-
-O sistema aplica automaticamente:
-
-| Condição | Ação |
-|----------|------|
-| CPA > limite | Pausar campanha |
-| ROAS < mínimo | Reduzir budget 30% |
-| CTR < 0.5% | Sugerir novo criativo |
-| Performance boa | Aumentar budget 20% |
-
-Configure os limites no `.env`:
-
-```env
-MAX_CPA=5000      # R$ 50,00 em centavos
-MIN_ROAS=1.5      # ROAS mínimo
-```
-
-## Modelos Ollama Recomendados
-
-| Modelo | RAM | Qualidade | Velocidade |
-|--------|-----|-----------|------------|
-| `llama3.2:3b` | 4GB | Boa | Rápida |
-| `llama3.2` | 8GB | Muito boa | Média |
-| `mistral` | 6GB | Boa | Rápida |
-| `gemma2:9b` | 10GB | Excelente | Média |
-
-Para trocar o modelo, edite o `.env`:
-
-```env
-OLLAMA_MODEL=mistral
-```
-
-## Fluxo de Automação
-
-```
-Seus Criativos (pasta)
-        │
-        ▼
-   Upload Meta
-        │
-        ▼
-  Ollama gera Copy ──────┐
-        │                │
-        ▼                │
- Criar Campanha          │
-        │                │
-        ▼                │
-   Monitorar ◄───────────┘
-        │
-        ▼
-   CPA/ROAS OK? ──No──► Pausar/Ajustar
-        │
-       Yes
-        ▼
-     Escalar
-```
-
-## Contribuindo
-
-1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## Licença
-
-MIT License - veja [LICENSE](LICENSE) para detalhes.
-
-## Suporte
-
-- Issues: [GitHub Issues](https://github.com/seu-usuario/meta-ads-automation/issues)
-- Docs Meta: [Marketing API](https://developers.facebook.com/docs/marketing-apis/)
-- Docs Ollama: [ollama.com](https://ollama.com)
+[LinkedIn](https://www.linkedin.com/in/elidadutra) · [GitHub](https://github.com/elidadutra187)
