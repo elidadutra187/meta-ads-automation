@@ -20,6 +20,7 @@ click>=8.1.0
 
 # Análise de dados
 pandas>=2.0.0
+google-cloud-bigquery>=3.25.0
 
 # Logs
 loguru>=0.7.0

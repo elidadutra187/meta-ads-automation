@@ -17,6 +17,14 @@ data/*.db
 data/*.db-*
 data/*.sqlite
 data/*.sqlite-*
+data/bigquery_load/
+
+# Arquivos locais de autenticacao/execucao
+GCLOUD_LOGIN_*.txt
+GCLOUD_LOGIN_*.log
+*_temp.sql
+run_*_temp.bat
+looker_studio/*_rendered.sql
 
 # IDE
 .vscode/
